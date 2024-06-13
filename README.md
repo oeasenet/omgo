@@ -8,9 +8,9 @@
 
 ## Requirements
 
--`Go 1.10` and above.
+-`Go 1.22` and above.
 
--`MongoDB 2.6` and above.
+-`MongoDB 6` and above.
 
 ## Features
 - CRUD to documents, with all official supported options
@@ -20,7 +20,6 @@
 - Automatically default and custom fields
 - Predefine operator keys
 - Aggregate、indexes operation、cursor
-- Validation tags
 - Plugin
 
 ## Installation
@@ -359,15 +358,4 @@ cli.Find(ctx, bson.M{"age": 6}).Sort("weight").Limit(7).All(&batch)
 // find all, sort and limit
 coll.Find(bson.M{"age": 6}).Sort("weight").Limit(7).All(&batch)
 ```
-
-## `Qmgo` vs `mgo`
-[Differences between qmgo and mgo](https://github.com/oeasenet/qmgo/wiki/Differences-between-Qmgo-and-Mgo)
- 
-## Contributing
-
-The Qmgo project welcomes all contributors. We appreciate your help! 
-
-## Communication:
-
-- Join [qmgo discussions](https://github.com/oeasenet/qmgo/discussions)
 
