@@ -1,12 +1,4 @@
-# Qmgo 
-
-[![Build Status](https://travis-ci.org/qiniu/qmgo.png?branch=master)](https://travis-ci.org/qiniu/qmgo)
-[![Coverage Status](https://codecov.io/gh/qiniu/qmgo/branch/master/graph/badge.svg)](https://codecov.io/gh/qiniu/qmgo)
-[![Go Report Card](https://goreportcard.com/badge/github.com/qiniu/qmgo)](https://goreportcard.com/report/github.com/qiniu/qmgo)
-[![GitHub release](https://img.shields.io/github/v/tag/qiniu/qmgo.svg?label=release)](https://github.com/qiniu/qmgo/releases)
-[![GoDoc](https://pkg.go.dev/badge/github.com/qiniu/qmgo?status.svg)](https://pkg.go.dev/github.com/qiniu/qmgo?tab=doc) 
-
-English | [简体中文](README_ZH.md)
+# Qmgo
 
 `Qmgo` is a `Go` `driver` for `MongoDB` . It is based on [MongoDB official driver](https://github.com/mongodb/mongo-go-driver), but easier to use like [mgo](https://github.com/go-mgo/mgo) (such as the chain call). 
 
@@ -33,11 +25,11 @@ English | [简体中文](README_ZH.md)
 
 ## Installation
 
-- Use `go mod` to automatically install dependencies by `import github.com/qiniu/qmgo`
+- Use `go mod` to automatically install dependencies by `import github.com/oeasenet/qmgo`
 
 Or 
 
-- Use `go get github.com/qiniu/qmgo`
+- Use `go get github.com/oeasenet/qmgo`
 
 ## Usage
 
@@ -48,7 +40,7 @@ Or
     import (
         "context"
       
-        "github.com/qiniu/qmgo"
+        "github.com/oeasenet/qmgo"
     )
     
     ctx := context.Background()
@@ -208,7 +200,7 @@ Or
     }
     result, err = cli.DoTransaction(ctx, callback)
     ````
-    [More about transaction](https://github.com/qiniu/qmgo/wiki/Transactions)
+    [More about transaction](https://github.com/oeasenet/qmgo/wiki/Transactions)
 
 - Predefine operator keys
 
@@ -241,7 +233,7 @@ Or
     u := &User{Name: "Alice", Age: 7}
     _, err := cli.InsertOne(context.Background(), u)
     ````
-    [More about hooks](https://github.com/qiniu/qmgo/wiki/Hooks)
+    [More about hooks](https://github.com/oeasenet/qmgo/wiki/Hooks)
 
 - Automatically fields
 
@@ -291,9 +283,9 @@ Or
     // UpdateTimeAt will update
     ```
 
-    Check [examples here](https://github.com/qiniu/qmgo/blob/master/field_test.go)
+    Check [examples here](https://github.com/oeasenet/qmgo/blob/master/field_test.go)
 
-    [More about automatically fields](https://github.com/qiniu/qmgo/wiki/Automatically-update-fields)
+    [More about automatically fields](https://github.com/oeasenet/qmgo/wiki/Automatically-update-fields)
 
 - Validation tags
 
@@ -369,7 +361,7 @@ coll.Find(bson.M{"age": 6}).Sort("weight").Limit(7).All(&batch)
 ```
 
 ## `Qmgo` vs `mgo`
-[Differences between qmgo and mgo](https://github.com/qiniu/qmgo/wiki/Differences-between-Qmgo-and-Mgo)
+[Differences between qmgo and mgo](https://github.com/oeasenet/qmgo/wiki/Differences-between-Qmgo-and-Mgo)
  
 ## Contributing
 
@@ -377,5 +369,5 @@ The Qmgo project welcomes all contributors. We appreciate your help!
 
 ## Communication:
 
-- Join [qmgo discussions](https://github.com/qiniu/qmgo/discussions)
+- Join [qmgo discussions](https://github.com/oeasenet/qmgo/discussions)
 
