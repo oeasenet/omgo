@@ -1,5 +1,5 @@
 /*
- Copyright 2020 The Qmgo Authors.
+ Copyright 2020 The omgo Authors.
  Licensed under the Apache License, Version 2.0 (the "License");
  you may not use this file except in compliance with the License.
  You may obtain a copy of the License at
@@ -11,12 +11,12 @@
  limitations under the License.
 */
 
-package qmgo
+package omgo
 
 import (
 	"context"
 
-	opts "github.com/oeasenet/qmgo/options"
+	opts "github.com/oeasenet/omgo/options"
 	"go.mongodb.org/mongo-driver/mongo"
 	"go.mongodb.org/mongo-driver/mongo/options"
 	"go.mongodb.org/mongo-driver/x/mongo/driver"
@@ -35,9 +35,9 @@ type Session struct {
 //   - make sure all operations in callback use the sessCtx as context parameter
 //   - Dont forget to call EndSession if session is not used anymore
 //   - if operations in callback takes more than(include equal) 120s, the operations will not take effect,
-//   - if operation in callback return qmgo.ErrTransactionRetry,
+//   - if operation in callback return omgo.ErrTransactionRetry,
 //     the whole transaction will retry, so this transaction must be idempotent
-//   - if operations in callback return qmgo.ErrTransactionNotSupported,
+//   - if operations in callback return omgo.ErrTransactionNotSupported,
 //   - If the ctx parameter already has a Session attached to it, it will be replaced by this session.
 func (s *Session) StartTransaction(ctx context.Context, cb func(sessCtx context.Context) (interface{}, error), opts ...*opts.TransactionOptions) (interface{}, error) {
 	transactionOpts := options.Transaction()

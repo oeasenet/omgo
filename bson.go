@@ -1,5 +1,5 @@
 /*
- Copyright 2021 The Qmgo Authors.
+ Copyright 2021 The omgo Authors.
  Licensed under the Apache License, Version 2.0 (the "License");
  you may not use this file except in compliance with the License.
  You may obtain a copy of the License at
@@ -11,12 +11,12 @@
  limitations under the License.
 */
 
-package qmgo
+package omgo
 
 import "go.mongodb.org/mongo-driver/bson"
 
 // alias mongo drive bson primitives
-// thus user don't need to import go.mongodb.org/mongo-driver/mongo, it's all in qmgo
+// thus user don't need to import go.mongodb.org/mongo-driver/mongo, it's all in omgo
 type (
 	// M is an alias of bson.M
 	M = bson.M

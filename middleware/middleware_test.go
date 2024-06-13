@@ -3,7 +3,7 @@ package middleware
 import (
 	"context"
 	"fmt"
-	"github.com/oeasenet/qmgo/operator"
+	"github.com/oeasenet/omgo/operator"
 	"testing"
 
 	"github.com/stretchr/testify/require"

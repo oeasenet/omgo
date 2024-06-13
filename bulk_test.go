@@ -1,11 +1,11 @@
-package qmgo
+package omgo
 
 import (
 	"context"
 
 	"testing"
 
-	"github.com/oeasenet/qmgo/operator"
+	"github.com/oeasenet/omgo/operator"
 	"github.com/stretchr/testify/require"
 	"go.mongodb.org/mongo-driver/bson"
 	"go.mongodb.org/mongo-driver/bson/primitive"

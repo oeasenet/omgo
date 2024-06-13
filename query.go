@@ -1,5 +1,5 @@
 /*
- Copyright 2020 The Qmgo Authors.
+ Copyright 2020 The omgo Authors.
  Licensed under the Apache License, Version 2.0 (the "License");
  you may not use this file except in compliance with the License.
  You may obtain a copy of the License at
@@ -11,16 +11,16 @@
  limitations under the License.
 */
 
-package qmgo
+package omgo
 
 import (
 	"context"
 	"fmt"
 	"reflect"
 
-	"github.com/oeasenet/qmgo/middleware"
-	"github.com/oeasenet/qmgo/operator"
-	qOpts "github.com/oeasenet/qmgo/options"
+	"github.com/oeasenet/omgo/middleware"
+	"github.com/oeasenet/omgo/operator"
+	qOpts "github.com/oeasenet/omgo/options"
 	"go.mongodb.org/mongo-driver/bson"
 	"go.mongodb.org/mongo-driver/bson/bsoncodec"
 	"go.mongodb.org/mongo-driver/mongo"

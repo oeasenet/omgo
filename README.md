@@ -1,10 +1,10 @@
-# Qmgo
+# Omgo
 
-`Qmgo` is a `Go` `driver` for `MongoDB` . It is based on [MongoDB official driver](https://github.com/mongodb/mongo-go-driver), but easier to use like [mgo](https://github.com/go-mgo/mgo) (such as the chain call). 
+`Omgo` is a `Go` `driver` for `MongoDB` . It is based on [MongoDB official driver](https://github.com/mongodb/mongo-go-driver), but easier to use like [mgo](https://github.com/go-mgo/mgo) (such as the chain call). 
 
-- `Qmgo` allows users to use the new features of `MongoDB` in a more elegant way.
+- `Omgo` allows users to use the new features of `MongoDB` in a more elegant way.
 
-- `Qmgo` is the first choice for migrating from `mgo` to the new `MongoDB driver` with minimal code changes.
+- `Omgo` is the first choice for migrating from `mgo` to the new `MongoDB driver` with minimal code changes.
 
 ## Requirements
 
@@ -24,11 +24,11 @@
 
 ## Installation
 
-- Use `go mod` to automatically install dependencies by `import github.com/oeasenet/qmgo`
+- Use `go mod` to automatically install dependencies by `import github.com/oeasenet/omgo`
 
 Or 
 
-- Use `go get github.com/oeasenet/qmgo`
+- Use `go get github.com/oeasenet/omgo`
 
 ## Usage
 
@@ -39,11 +39,11 @@ Or
     import (
         "context"
       
-        "github.com/oeasenet/qmgo"
+        "github.com/oeasenet/omgo"
     )
     
     ctx := context.Background()
-    client, err := qmgo.NewClient(ctx, &qmgo.Config{Uri: "mongodb://localhost:27017"})
+    client, err := omgo.NewClient(ctx, &omgo.Config{Uri: "mongodb://localhost:27017"})
     db := client.Database("class")
     coll := db.Collection("user")
     ```
@@ -51,7 +51,7 @@ Or
     All operations can be based on `cli`:
     
     ```go
-    cli, err := qmgo.Open(ctx, &qmgo.Config{Uri: "mongodb://localhost:27017", Database: "class", Coll: "user"})
+    cli, err := omgo.Open(ctx, &omgo.Config{Uri: "mongodb://localhost:27017", Database: "class", Coll: "user"})
     ```
     
     ***The following examples will be based on `cli`, if you use the first way for initialization, replace `cli` with `client`、`db` or `coll`***
@@ -199,7 +199,7 @@ Or
     }
     result, err = cli.DoTransaction(ctx, callback)
     ````
-    [More about transaction](https://github.com/oeasenet/qmgo/wiki/Transactions)
+    [More about transaction](https://github.com/oeasenet/omgo/wiki/Transactions)
 
 - Predefine operator keys
 
@@ -213,7 +213,7 @@ Or
 
 - Hooks
 
-    Qmgo flexible hooks:
+    Omgo flexible hooks:
 
     ````go
     type User struct {
@@ -232,15 +232,15 @@ Or
     u := &User{Name: "Alice", Age: 7}
     _, err := cli.InsertOne(context.Background(), u)
     ````
-    [More about hooks](https://github.com/oeasenet/qmgo/wiki/Hooks)
+    [More about hooks](https://github.com/oeasenet/omgo/wiki/Hooks)
 
 - Automatically fields
 
-    Qmgo support two ways to make specific fields automatically update in specific API
+    Omgo support two ways to make specific fields automatically update in specific API
    
     - Default fields
     
-    Inject `field.DefaultField` in document struct, Qmgo will update `createAt`、`updateAt` and `_id` in update and insert operation.
+    Inject `field.DefaultField` in document struct, Omgo will update `createAt`、`updateAt` and `_id` in update and insert operation.
     
     ````go
     type User struct {
@@ -257,7 +257,7 @@ Or
 
     - Custom fields
     
-    Define the custom fields, Qmgo will update them in update and insert operation.
+    Define the custom fields, Omgo will update them in update and insert operation.
 
     ```go
     type User struct {
@@ -282,15 +282,15 @@ Or
     // UpdateTimeAt will update
     ```
 
-    Check [examples here](https://github.com/oeasenet/qmgo/blob/master/field_test.go)
+    Check [examples here](https://github.com/oeasenet/omgo/blob/master/field_test.go)
 
-    [More about automatically fields](https://github.com/oeasenet/qmgo/wiki/Automatically-update-fields)
+    [More about automatically fields](https://github.com/oeasenet/omgo/wiki/Automatically-update-fields)
 
 - Validation tags
 
-    Qmgo Validation tags is Based on [go-playground/validator](https://github.com/go-playground/validator).
+    Omgo Validation tags is Based on [go-playground/validator](https://github.com/go-playground/validator).
     
-    So Qmgo support [all validations on structs in go-playground/validator](https://github.com/go-playground/validator#usage-and-documentation), such as:
+    So Omgo support [all validations on structs in go-playground/validator](https://github.com/go-playground/validator#usage-and-documentation), such as:
     
     ```go
     type User struct {
@@ -303,7 +303,7 @@ Or
     }
     ```
     
-    Qmgo tags only supported in following API：
+    Omgo tags only supported in following API：
     ` InsertOne、InsertyMany、Upsert、UpsertId、ReplaceOne `
 
 - Plugin
@@ -318,18 +318,18 @@ Or
     
     - Call Register() in package middleware, register the method `Do`
     
-      Qmgo will call `Do` before and after the [operation](operator/operate_type.go)
+      omgo will call `Do` before and after the [operation](operator/operate_type.go)
       
     ```go
     middleware.Register(Do)
     ```
     [Example](middleware/middleware_test.go)
     
-    The `hook`、`automatically fields` and `validation tags` in Qmgo run on **plugin**.
+    The `hook`、`automatically fields` and `validation tags` in omgo run on **plugin**.
     
-## `Qmgo` vs `go.mongodb.org/mongo-driver`
+## `omgo` vs `go.mongodb.org/mongo-driver`
 
-Below we give an example of multi-file search、sort and limit to illustrate the similarities between `qmgo` and `mgo` and the improvement compare to `go.mongodb.org/mongo-driver`.
+Below we give an example of multi-file search、sort and limit to illustrate the similarities between `omgo` and `mgo` and the improvement compare to `go.mongodb.org/mongo-driver`.
 How do we do in`go.mongodb.org/mongo-driver`:
 
 ```go
@@ -346,10 +346,10 @@ cur, err := coll.Find(ctx, bson.M{"age": 6}, findOptions)
 cur.All(ctx, &batch)
 ```
 
-How do we do in `Qmgo` and `mgo`:
+How do we do in `omgo` and `mgo`:
 
 ```go
-// qmgo
+// omgo
 // find all, sort and limit
 batch := []UserInfo{}
 cli.Find(ctx, bson.M{"age": 6}).Sort("weight").Limit(7).All(&batch)

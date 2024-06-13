@@ -1,5 +1,5 @@
 /*
- Copyright 2020 The Qmgo Authors.
+ Copyright 2020 The omgo Authors.
  Licensed under the Apache License, Version 2.0 (the "License");
  you may not use this file except in compliance with the License.
  You may obtain a copy of the License at
@@ -11,24 +11,24 @@
  limitations under the License.
 */
 
-package qmgo
+package omgo
 
 import (
 	"context"
 	"fmt"
 	"testing"
 
-	"github.com/oeasenet/qmgo/options"
+	"github.com/oeasenet/omgo/options"
 	"github.com/stretchr/testify/require"
 	"go.mongodb.org/mongo-driver/bson"
 	officialOpts "go.mongodb.org/mongo-driver/mongo/options"
 	"go.mongodb.org/mongo-driver/mongo/readpref"
 )
 
-func initClient(col string) *QmgoClient {
+func initClient(col string) *OmgoClient {
 	cfg := Config{
 		Uri:      "mongodb://localhost:27017",
-		Database: "qmgotest",
+		Database: "omgotest",
 		Coll:     col,
 	}
 	var cTimeout int64 = 0
@@ -48,7 +48,7 @@ func initClient(col string) *QmgoClient {
 	return qClient
 }
 
-func TestQmgoClient(t *testing.T) {
+func TestOmgoClient(t *testing.T) {
 	ast := require.New(t)
 	var timeout int64 = 50
 
@@ -68,7 +68,7 @@ func TestQmgoClient(t *testing.T) {
 
 	cfg = Config{
 		Uri:              "mongodb://localhost:27017",
-		Database:         "qmgotest",
+		Database:         "omgotest",
 		Coll:             "testopen",
 		ConnectTimeoutMS: &timeout,
 		MaxPoolSize:      &maxPoolSize,
@@ -78,7 +78,7 @@ func TestQmgoClient(t *testing.T) {
 
 	cli, err := Open(context.Background(), &cfg)
 	ast.NoError(err)
-	ast.Equal(cli.GetDatabaseName(), "qmgotest")
+	ast.Equal(cli.GetDatabaseName(), "omgotest")
 	ast.Equal(cli.GetCollectionName(), "testopen")
 
 	err = cli.Ping(5)
@@ -101,7 +101,7 @@ func TestQmgoClient(t *testing.T) {
 	// primary mode with max stalenessMS, error
 	cfg = Config{
 		Uri:              "mongodb://localhost:27017",
-		Database:         "qmgotest",
+		Database:         "omgotest",
 		Coll:             "testopen",
 		ConnectTimeoutMS: &timeout,
 		MaxPoolSize:      &maxPoolSize,
@@ -131,7 +131,7 @@ func TestClient(t *testing.T) {
 
 	opts := &options.DatabaseOptions{DatabaseOptions: officialOpts.Database().SetReadPreference(readpref.PrimaryPreferred())}
 	cOpts := &options.CollectionOptions{CollectionOptions: officialOpts.Collection().SetReadPreference(readpref.PrimaryPreferred())}
-	coll := c.Database("qmgotest", opts).Collection("testopen", cOpts)
+	coll := c.Database("omgotest", opts).Collection("testopen", cOpts)
 
 	res, err := coll.InsertOne(context.Background(), bson.D{{Key: "x", Value: 1}})
 	ast.NoError(err)
@@ -144,7 +144,7 @@ func TestClient_ServerVersion(t *testing.T) {
 
 	cfg := &Config{
 		Uri:      "mongodb://localhost:27017",
-		Database: "qmgotest",
+		Database: "omgotest",
 		Coll:     "transaction",
 	}
 
@@ -163,7 +163,7 @@ func TestClient_newAuth(t *testing.T) {
 	auth := Credential{
 		AuthMechanism: "PLAIN",
 		AuthSource:    "PLAIN",
-		Username:      "qmgo",
+		Username:      "omgo",
 		Password:      "123",
 		PasswordSet:   false,
 	}
@@ -188,7 +188,7 @@ func TestClient_newAuth(t *testing.T) {
 	auth = Credential{
 		AuthMechanism: "PLAIN",
 		AuthSource:    "PLAIN",
-		Username:      "qmgo",
+		Username:      "omgo",
 		Password:      "12:3",
 		PasswordSet:   false,
 	}
@@ -198,7 +198,7 @@ func TestClient_newAuth(t *testing.T) {
 	auth = Credential{
 		AuthMechanism: "PLAIN",
 		AuthSource:    "PLAIN",
-		Username:      "qmgo",
+		Username:      "omgo",
 		Password:      "1/23",
 		PasswordSet:   false,
 	}
@@ -208,7 +208,7 @@ func TestClient_newAuth(t *testing.T) {
 	auth = Credential{
 		AuthMechanism: "PLAIN",
 		AuthSource:    "PLAIN",
-		Username:      "qmgo",
+		Username:      "omgo",
 		Password:      "1%3",
 		PasswordSet:   false,
 	}

@@ -1,5 +1,5 @@
 /*
- Copyright 2020 The Qmgo Authors.
+ Copyright 2020 The omgo Authors.
  Licensed under the Apache License, Version 2.0 (the "License");
  you may not use this file except in compliance with the License.
  You may obtain a copy of the License at
@@ -11,7 +11,7 @@
  limitations under the License.
 */
 
-package qmgo
+package omgo
 
 import (
 	"context"
@@ -19,7 +19,7 @@ import (
 	"go.mongodb.org/mongo-driver/mongo/readpref"
 	"testing"
 
-	opts "github.com/oeasenet/qmgo/options"
+	opts "github.com/oeasenet/omgo/options"
 	"github.com/stretchr/testify/require"
 	"go.mongodb.org/mongo-driver/bson"
 )
@@ -32,7 +32,7 @@ func TestDatabase(t *testing.T) {
 	var maxPoolSize uint64 = 3000
 	var minPoolSize uint64 = 0
 	collName := "testopen"
-	dbName := "qmgotest"
+	dbName := "omgotest"
 
 	cfg := Config{
 		Uri:              "mongodb://localhost:27017",

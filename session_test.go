@@ -1,5 +1,5 @@
 /*
- Copyright 2020 The Qmgo Authors.
+ Copyright 2020 The omgo Authors.
  Licensed under the Apache License, Version 2.0 (the "License");
  you may not use this file except in compliance with the License.
  You may obtain a copy of the License at
@@ -11,7 +11,7 @@
  limitations under the License.
 */
 
-package qmgo
+package omgo
 
 import (
 	"context"
@@ -19,14 +19,14 @@ import (
 	"fmt"
 	"testing"
 
-	opts "github.com/oeasenet/qmgo/options"
+	opts "github.com/oeasenet/omgo/options"
 	"github.com/stretchr/testify/require"
 	"go.mongodb.org/mongo-driver/bson"
 	"go.mongodb.org/mongo-driver/mongo/options"
 	"go.mongodb.org/mongo-driver/mongo/readpref"
 )
 
-func initTransactionClient(coll string) *QmgoClient {
+func initTransactionClient(coll string) *OmgoClient {
 	cfg := Config{
 		Uri:      "mongodb://localhost:27017",
 		Database: "transaction",

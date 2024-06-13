@@ -2,9 +2,9 @@ package middleware
 
 import (
 	"context"
-	"github.com/oeasenet/qmgo/field"
-	"github.com/oeasenet/qmgo/hook"
-	"github.com/oeasenet/qmgo/operator"
+	"github.com/oeasenet/omgo/field"
+	"github.com/oeasenet/omgo/hook"
+	"github.com/oeasenet/omgo/operator"
 )
 
 // callback define the callback function type

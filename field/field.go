@@ -1,5 +1,5 @@
 /*
- Copyright 2020 The Qmgo Authors.
+ Copyright 2020 The omgo Authors.
  Licensed under the Apache License, Version 2.0 (the "License");
  you may not use this file except in compliance with the License.
  You may obtain a copy of the License at
@@ -18,7 +18,7 @@ import (
 	"reflect"
 	"time"
 
-	"github.com/oeasenet/qmgo/operator"
+	"github.com/oeasenet/omgo/operator"
 )
 
 var nilTime time.Time

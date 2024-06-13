@@ -1,5 +1,5 @@
 /*
- Copyright 2020 The Qmgo Authors.
+ Copyright 2020 The omgo Authors.
  Licensed under the Apache License, Version 2.0 (the "License");
  you may not use this file except in compliance with the License.
  You may obtain a copy of the License at
@@ -11,7 +11,7 @@
  limitations under the License.
 */
 
-package qmgo
+package omgo
 
 import (
 	"context"
@@ -52,7 +52,7 @@ type BulkResult struct {
 // Individual operations inside a bulk do not trigger middlewares or hooks
 // at present.
 //
-// Different from original mgo, the qmgo implementation of Bulk does not emulate
+// Different from original mgo, the omgo implementation of Bulk does not emulate
 // bulk operations individually on old versions of MongoDB servers that do not
 // natively support bulk operations.
 //

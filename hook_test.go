@@ -1,5 +1,5 @@
 /*
- Copyright 2020 The Qmgo Authors.
+ Copyright 2020 The omgo Authors.
  Licensed under the Apache License, Version 2.0 (the "License");
  you may not use this file except in compliance with the License.
  You may obtain a copy of the License at
@@ -11,15 +11,15 @@
  limitations under the License.
 */
 
-package qmgo
+package omgo
 
 import (
 	"context"
 	"errors"
 	"testing"
 
-	"github.com/oeasenet/qmgo/operator"
-	"github.com/oeasenet/qmgo/options"
+	"github.com/oeasenet/omgo/operator"
+	"github.com/oeasenet/omgo/options"
 	"github.com/stretchr/testify/require"
 	"go.mongodb.org/mongo-driver/bson"
 	"go.mongodb.org/mongo-driver/bson/primitive"

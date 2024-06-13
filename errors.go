@@ -1,5 +1,5 @@
 /*
- Copyright 2020 The Qmgo Authors.
+ Copyright 2020 The omgo Authors.
  Licensed under the Apache License, Version 2.0 (the "License");
  you may not use this file except in compliance with the License.
  You may obtain a copy of the License at
@@ -11,7 +11,7 @@
  limitations under the License.
 */
 
-package qmgo
+package omgo
 
 import (
 	"errors"
@@ -45,7 +45,7 @@ var (
 	ErrReplacementContainUpdateOperators = errors.New("replacement document cannot contain keys beginning with '$'")
 )
 
-// IsErrNoDocuments check if err is no documents, both mongo-go-driver error and qmgo custom error
+// IsErrNoDocuments check if err is no documents, both mongo-go-driver error and omgo custom error
 // Deprecated, simply call if err == ErrNoSuchDocuments or if err == mongo.ErrNoDocuments
 func IsErrNoDocuments(err error) bool {
 	if err == ErrNoSuchDocuments {

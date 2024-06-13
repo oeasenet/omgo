@@ -1,5 +1,5 @@
 /*
- Copyright 2020 The Qmgo Authors.
+ Copyright 2020 The omgo Authors.
  Licensed under the Apache License, Version 2.0 (the "License");
  you may not use this file except in compliance with the License.
  You may obtain a copy of the License at
@@ -11,7 +11,7 @@
  limitations under the License.
 */
 
-package qmgo
+package omgo
 
 import (
 	"context"
@@ -23,8 +23,8 @@ import (
 	"go.mongodb.org/mongo-driver/mongo"
 	officialOpts "go.mongodb.org/mongo-driver/mongo/options"
 
-	"github.com/oeasenet/qmgo/operator"
-	"github.com/oeasenet/qmgo/options"
+	"github.com/oeasenet/omgo/operator"
+	"github.com/oeasenet/omgo/options"
 )
 
 func TestCollection_EnsureIndex(t *testing.T) {
