@@ -286,26 +286,6 @@ Or
 
     [More about automatically fields](https://github.com/oeasenet/omgo/wiki/Automatically-update-fields)
 
-- Validation tags
-
-    Omgo Validation tags is Based on [go-playground/validator](https://github.com/go-playground/validator).
-    
-    So Omgo support [all validations on structs in go-playground/validator](https://github.com/go-playground/validator#usage-and-documentation), such as:
-    
-    ```go
-    type User struct {
-        FirstName string            `bson:"fname"`
-        LastName  string            `bson:"lname"`
-        Age       uint8             `bson:"age" validate:"gte=0,lte=130" `    // Age must in [0,130]
-        Email     string            `bson:"e-mail" validate:"required,email"` //  Email can't be empty string, and must has email format
-        CreateAt  time.Time         `bson:"createAt" validate:"lte"`          // CreateAt must lte than current time
-        Relations map[string]string `bson:"relations" validate:"max=2"`       // Relations can't has more than 2 elements
-    }
-    ```
-    
-    Omgo tags only supported in following API：
-    ` InsertOne、InsertyMany、Upsert、UpsertId、ReplaceOne `
-
 - Plugin
     
     - Implement following method:
