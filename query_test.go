@@ -19,12 +19,12 @@ import (
 	"testing"
 	"time"
 
-	"github.com/oeasenet/omgo/operator"
 	"github.com/stretchr/testify/require"
 	"go.mongodb.org/mongo-driver/bson"
 	"go.mongodb.org/mongo-driver/bson/primitive"
 	"go.mongodb.org/mongo-driver/mongo"
 	"go.mongodb.org/mongo-driver/mongo/options"
+	"go.oease.dev/omgo/operator"
 )
 
 type QueryTestItem struct {

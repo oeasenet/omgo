@@ -19,10 +19,10 @@ import (
 	"testing"
 	"time"
 
-	"github.com/oeasenet/omgo/field"
 	"github.com/stretchr/testify/require"
 	"go.mongodb.org/mongo-driver/bson"
 	"go.mongodb.org/mongo-driver/bson/primitive"
+	"go.oease.dev/omgo/field"
 )
 
 type UserField struct {

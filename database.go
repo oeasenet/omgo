@@ -16,10 +16,10 @@ package omgo
 import (
 	"context"
 
-	"github.com/oeasenet/omgo/options"
 	"go.mongodb.org/mongo-driver/bson/bsoncodec"
 	"go.mongodb.org/mongo-driver/mongo"
 	officialOpts "go.mongodb.org/mongo-driver/mongo/options"
+	"go.oease.dev/omgo/options"
 )
 
 // Database is a handle to a MongoDB database

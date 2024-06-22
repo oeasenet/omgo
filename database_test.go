@@ -19,9 +19,9 @@ import (
 	"go.mongodb.org/mongo-driver/mongo/readpref"
 	"testing"
 
-	opts "github.com/oeasenet/omgo/options"
 	"github.com/stretchr/testify/require"
 	"go.mongodb.org/mongo-driver/bson"
+	opts "go.oease.dev/omgo/options"
 )
 
 func TestDatabase(t *testing.T) {

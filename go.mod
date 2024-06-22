@@ -1,4 +1,4 @@
-module github.com/oeasenet/omgo
+module go.oease.dev/omgo
 
 go 1.22
 

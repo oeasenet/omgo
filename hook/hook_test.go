@@ -19,9 +19,9 @@ import (
 	"fmt"
 	"testing"
 
-	"github.com/oeasenet/omgo/operator"
 	"github.com/stretchr/testify/mock"
 	"github.com/stretchr/testify/require"
+	"go.oease.dev/omgo/operator"
 )
 
 type User struct {

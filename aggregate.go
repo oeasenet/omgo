@@ -15,8 +15,8 @@ package omgo
 
 import (
 	"context"
-	opts "github.com/oeasenet/omgo/options"
 	"go.mongodb.org/mongo-driver/mongo/options"
+	opts "go.oease.dev/omgo/options"
 
 	"go.mongodb.org/mongo-driver/bson"
 	"go.mongodb.org/mongo-driver/mongo"

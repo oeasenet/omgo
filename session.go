@@ -16,10 +16,10 @@ package omgo
 import (
 	"context"
 
-	opts "github.com/oeasenet/omgo/options"
 	"go.mongodb.org/mongo-driver/mongo"
 	"go.mongodb.org/mongo-driver/mongo/options"
 	"go.mongodb.org/mongo-driver/x/mongo/driver"
+	opts "go.oease.dev/omgo/options"
 )
 
 // Session is an struct that represents a MongoDB logical session

@@ -15,7 +15,7 @@ package hook
 
 import (
 	"context"
-	"github.com/oeasenet/omgo/operator"
+	"go.oease.dev/omgo/operator"
 	"reflect"
 )
 

@@ -18,13 +18,13 @@ import (
 	"errors"
 	"testing"
 
-	"github.com/oeasenet/omgo/operator"
-	"github.com/oeasenet/omgo/options"
 	"github.com/stretchr/testify/require"
 	"go.mongodb.org/mongo-driver/bson"
 	"go.mongodb.org/mongo-driver/bson/primitive"
 	"go.mongodb.org/mongo-driver/event"
 	opts "go.mongodb.org/mongo-driver/mongo/options"
+	"go.oease.dev/omgo/operator"
+	"go.oease.dev/omgo/options"
 )
 
 const (

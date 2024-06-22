@@ -16,8 +16,8 @@ package omgo
 import (
 	"context"
 	"errors"
-	opts "github.com/oeasenet/omgo/options"
 	"go.mongodb.org/mongo-driver/mongo/options"
+	opts "go.oease.dev/omgo/options"
 	"testing"
 
 	"github.com/stretchr/testify/require"

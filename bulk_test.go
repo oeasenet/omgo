@@ -5,10 +5,10 @@ import (
 
 	"testing"
 
-	"github.com/oeasenet/omgo/operator"
 	"github.com/stretchr/testify/require"
 	"go.mongodb.org/mongo-driver/bson"
 	"go.mongodb.org/mongo-driver/bson/primitive"
+	"go.oease.dev/omgo/operator"
 )
 
 func TestBulk(t *testing.T) {

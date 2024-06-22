@@ -39,7 +39,7 @@ Or
     import (
         "context"
       
-        "github.com/oeasenet/omgo"
+        "go.oease.dev/omgo"
     )
     
     ctx := context.Background()

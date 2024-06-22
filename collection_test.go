@@ -23,8 +23,8 @@ import (
 	"go.mongodb.org/mongo-driver/mongo"
 	officialOpts "go.mongodb.org/mongo-driver/mongo/options"
 
-	"github.com/oeasenet/omgo/operator"
-	"github.com/oeasenet/omgo/options"
+	"go.oease.dev/omgo/operator"
+	"go.oease.dev/omgo/options"
 )
 
 func TestCollection_EnsureIndex(t *testing.T) {

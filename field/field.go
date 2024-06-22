@@ -18,7 +18,7 @@ import (
 	"reflect"
 	"time"
 
-	"github.com/oeasenet/omgo/operator"
+	"go.oease.dev/omgo/operator"
 )
 
 var nilTime time.Time

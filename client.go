@@ -20,12 +20,12 @@ import (
 	"strings"
 	"time"
 
-	"github.com/oeasenet/omgo/options"
 	"go.mongodb.org/mongo-driver/bson"
 	"go.mongodb.org/mongo-driver/bson/bsoncodec"
 	"go.mongodb.org/mongo-driver/mongo"
 	officialOpts "go.mongodb.org/mongo-driver/mongo/options"
 	"go.mongodb.org/mongo-driver/mongo/readpref"
+	"go.oease.dev/omgo/options"
 )
 
 // Config for initial mongodb instance

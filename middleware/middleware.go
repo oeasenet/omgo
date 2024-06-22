@@ -2,9 +2,9 @@ package middleware
 
 import (
 	"context"
-	"github.com/oeasenet/omgo/field"
-	"github.com/oeasenet/omgo/hook"
-	"github.com/oeasenet/omgo/operator"
+	"go.oease.dev/omgo/field"
+	"go.oease.dev/omgo/hook"
+	"go.oease.dev/omgo/operator"
 )
 
 // callback define the callback function type

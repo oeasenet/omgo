@@ -18,11 +18,11 @@ import (
 	"fmt"
 	"testing"
 
-	"github.com/oeasenet/omgo/options"
 	"github.com/stretchr/testify/require"
 	"go.mongodb.org/mongo-driver/bson"
 	officialOpts "go.mongodb.org/mongo-driver/mongo/options"
 	"go.mongodb.org/mongo-driver/mongo/readpref"
+	"go.oease.dev/omgo/options"
 )
 
 func initClient(col string) *OmgoClient {

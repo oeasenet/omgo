@@ -19,13 +19,13 @@ import (
 	"reflect"
 	"strings"
 
-	"github.com/oeasenet/omgo/middleware"
-	"github.com/oeasenet/omgo/operator"
-	opts "github.com/oeasenet/omgo/options"
 	"go.mongodb.org/mongo-driver/bson"
 	"go.mongodb.org/mongo-driver/bson/bsoncodec"
 	"go.mongodb.org/mongo-driver/mongo"
 	"go.mongodb.org/mongo-driver/mongo/options"
+	"go.oease.dev/omgo/middleware"
+	"go.oease.dev/omgo/operator"
+	opts "go.oease.dev/omgo/options"
 )
 
 // Collection is a handle to a MongoDB collection
