@@ -48,6 +48,28 @@ func initClient(col string) *OmgoClient {
 	return qClient
 }
 
+func initDatabaseClient() *OmgoClient {
+	cfg := Config{
+		Uri:      "mongodb://localhost:27017",
+		Database: "omgotest",
+	}
+	var cTimeout int64 = 0
+	var sTimeout int64 = 500000
+	var maxPoolSize uint64 = 30000
+	var minPoolSize uint64 = 0
+	cfg.ConnectTimeoutMS = &cTimeout
+	cfg.SocketTimeoutMS = &sTimeout
+	cfg.MaxPoolSize = &maxPoolSize
+	cfg.MinPoolSize = &minPoolSize
+	cfg.ReadPreference = &ReadPref{Mode: readpref.PrimaryMode}
+	qClient, err := Open(context.Background(), &cfg)
+	if err != nil {
+		fmt.Println(err)
+		panic(err)
+	}
+	return qClient
+}
+
 func TestOmgoClient(t *testing.T) {
 	ast := require.New(t)
 	var timeout int64 = 50

@@ -15,6 +15,7 @@ package omgo
 
 import (
 	"context"
+	"go.mongodb.org/mongo-driver/bson"
 
 	"go.mongodb.org/mongo-driver/bson/bsoncodec"
 	"go.mongodb.org/mongo-driver/mongo"
@@ -84,4 +85,19 @@ func (db *Database) CreateCollection(ctx context.Context, name string, opts ...o
 		}
 	}
 	return db.database.CreateCollection(ctx, name, option...)
+}
+
+// ListCollectionNames returns an array containing the names of all collections and views in the current database,
+// or if running with access control, the names of the collections according to user's privilege.
+func (db *Database) ListCollectionNames(ctx context.Context, filter interface{}, opts ...options.ListCollectionsOptions) ([]string, error) {
+	var option = make([]*officialOpts.ListCollectionsOptions, 0, len(opts))
+	for _, opt := range opts {
+		if opt.ListCollectionsOptions != nil {
+			option = append(option, opt.ListCollectionsOptions)
+		}
+	}
+	if filter == nil {
+		filter = bson.D{}
+	}
+	return db.database.ListCollectionNames(ctx, filter, option...)
 }

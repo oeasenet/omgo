@@ -15,6 +15,7 @@ package omgo
 
 import (
 	"context"
+	"fmt"
 	"go.mongodb.org/mongo-driver/mongo/options"
 	"go.mongodb.org/mongo-driver/mongo/readpref"
 	"testing"
@@ -84,3 +85,12 @@ func TestRunCommand(t *testing.T) {
 //	cli.DropCollection(ctx)
 //	cli.DropDatabase(ctx)
 //}
+
+func TestListCollectionNames(t *testing.T) {
+	ast := require.New(t)
+
+	cli := initDatabaseClient()
+	collections, err := cli.ListCollectionNames(context.Background(), nil)
+	fmt.Print(collections)
+	ast.NoError(err)
+}
